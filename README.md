@@ -1,17 +1,18 @@
-# JSON Server [![Node.js CI](https://github.com/typicode/json-server/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/typicode/json-server/actions/workflows/node.js.yml)
+# JSON Server [![Node.js CI](https://github.com/typicode/json-server/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/typicode/json-server/actions/workflows/node.js.yml)
 
-Get a full fake REST API with __zero coding__ in __less than 30 seconds__ (seriously)
+Get a full fake REST API with **zero coding** in **less than 30 seconds** (seriously)
 
 Created with <3 for front-end developers who need a quick back-end for prototyping and mocking.
 
-* [Egghead.io free video tutorial - Creating demo APIs with json-server](https://egghead.io/lessons/nodejs-creating-demo-apis-with-json-server)
-* [JSONPlaceholder - Live running version](https://jsonplaceholder.typicode.com)
-* [__My JSON Server__ - no installation required, use your own data](https://my-json-server.typicode.com)
+- [Egghead.io free video tutorial - Creating demo APIs with json-server](https://egghead.io/lessons/nodejs-creating-demo-apis-with-json-server)
+- [JSONPlaceholder - Live running version](https://jsonplaceholder.typicode.com)
+- [**My JSON Server** - no installation required, use your own data](https://my-json-server.typicode.com)
 
 See also:
-* :dog: [husky - Git hooks made easy](https://github.com/typicode/husky)
-* :owl: [lowdb - local JSON database](https://github.com/typicode/lowdb)
-* ✅ [xv - a beautifully simple and capable test runner](https://github.com/typicode/xv)
+
+- :dog: [husky - Git hooks made easy](https://github.com/typicode/husky)
+- :owl: [lowdb - local JSON database](https://github.com/typicode/lowdb)
+- ✅ [xv - a beautifully simple and capable test runner](https://github.com/typicode/xv)
 
 <p>&nbsp;</p>
 
@@ -49,7 +50,7 @@ See also:
 
 ## Sponsor
 
-__Please help me build OSS__ 👉 [GitHub Sponsors](https://github.com/sponsors/typicode) :heart:
+**Please help me build OSS** 👉 [GitHub Sponsors](https://github.com/sponsors/typicode) :heart:
 
 ## Table of contents
 
@@ -57,40 +58,40 @@ __Please help me build OSS__ 👉 [GitHub Sponsors](https://github.com/sponsors/
 
 - [Getting started](#getting-started)
 - [Routes](#routes)
-  * [Plural routes](#plural-routes)
-  * [Singular routes](#singular-routes)
-  * [Filter](#filter)
-  * [Paginate](#paginate)
-  * [Sort](#sort)
-  * [Slice](#slice)
-  * [Operators](#operators)
-  * [Full-text search](#full-text-search)
-  * [Relationships](#relationships)
-  * [Database](#database)
-  * [Homepage](#homepage)
+  - [Plural routes](#plural-routes)
+  - [Singular routes](#singular-routes)
+  - [Filter](#filter)
+  - [Paginate](#paginate)
+  - [Sort](#sort)
+  - [Slice](#slice)
+  - [Operators](#operators)
+  - [Full-text search](#full-text-search)
+  - [Relationships](#relationships)
+  - [Database](#database)
+  - [Homepage](#homepage)
 - [Extras](#extras)
-  * [Static file server](#static-file-server)
-  * [Alternative port](#alternative-port)
-  * [Access from anywhere](#access-from-anywhere)
-  * [Remote schema](#remote-schema)
-  * [Generate random data](#generate-random-data)
-  * [HTTPS](#https)
-  * [Add custom routes](#add-custom-routes)
-  * [Add middlewares](#add-middlewares)
-  * [CLI usage](#cli-usage)
-  * [Module](#module)
-    + [Simple example](#simple-example)
-    + [Custom routes example](#custom-routes-example)
-    + [Access control example](#access-control-example)
-    + [Custom output example](#custom-output-example)
-    + [Rewriter example](#rewriter-example)
-    + [Mounting JSON Server on another endpoint example](#mounting-json-server-on-another-endpoint-example)
-    + [API](#api)
-  * [Deployment](#deployment)
+  - [Static file server](#static-file-server)
+  - [Alternative port](#alternative-port)
+  - [Access from anywhere](#access-from-anywhere)
+  - [Remote schema](#remote-schema)
+  - [Generate random data](#generate-random-data)
+  - [HTTPS](#https)
+  - [Add custom routes](#add-custom-routes)
+  - [Add middlewares](#add-middlewares)
+  - [CLI usage](#cli-usage)
+  - [Module](#module)
+    - [Simple example](#simple-example)
+    - [Custom routes example](#custom-routes-example)
+    - [Access control example](#access-control-example)
+    - [Custom output example](#custom-output-example)
+    - [Rewriter example](#rewriter-example)
+    - [Mounting JSON Server on another endpoint example](#mounting-json-server-on-another-endpoint-example)
+    - [API](#api)
+  - [Deployment](#deployment)
 - [Links](#links)
-  * [Video](#video)
-  * [Articles](#articles)
-  * [Third-party tools](#third-party-tools)
+  - [Video](#video)
+  - [Articles](#articles)
+  - [Third-party tools](#third-party-tools)
 - [License](#license)
 
 <!-- tocstop -->
@@ -100,7 +101,7 @@ __Please help me build OSS__ 👉 [GitHub Sponsors](https://github.com/sponsors/
 > [!NOTE]
 > Try JSON Server `v1-alpha` [here](https://github.com/typicode/json-server/tree/v1)
 
-Install JSON Server 
+Install JSON Server
 
 ```
 npm install -g json-server
@@ -110,13 +111,9 @@ Create a `db.json` file with some data
 
 ```json
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "posts": [{"id": 1, "title": "json-server", "author": "typicode"}],
+  "comments": [{"id": 1, "body": "some comment", "postId": 1}],
+  "profile": {"name": "typicode"}
 }
 ```
 
@@ -129,7 +126,7 @@ json-server --watch db.json
 Now if you go to [http://localhost:3000/posts/1](http://localhost:3000/posts/1), you'll get
 
 ```json
-{ "id": 1, "title": "json-server", "author": "typicode" }
+{"id": 1, "title": "json-server", "author": "typicode"}
 ```
 
 Also when doing requests, it's good to know that:
@@ -137,7 +134,7 @@ Also when doing requests, it's good to know that:
 - If you make POST, PUT, PATCH or DELETE requests, changes will be automatically and safely saved to `db.json` using [lowdb](https://github.com/typicode/lowdb).
 - Your request body JSON should be object enclosed, just like the GET output. (for example `{"name": "Foobar"}`)
 - Id values are not mutable. Any `id` value in the body of your PUT or PATCH request will be ignored. Only a value set in a POST request will be respected, but only if not already taken.
-- A POST, PUT or PATCH request should include a `Content-Type: application/json` header to use the JSON in the request body. Otherwise it will return a 2XX status code, but without changes being made to the data. 
+- A POST, PUT or PATCH request should include a `Content-Type: application/json` header to use the JSON in the request body. Otherwise it will return a 2XX status code, but without changes being made to the data.
 
 ## Routes
 
@@ -178,7 +175,6 @@ GET /comments?author.name=typicode
 Use `_page` and optionally `_limit` to paginate returned data.
 
 In the `Link` header you'll get `first`, `prev`, `next` and `last` links.
-
 
 ```
 GET /posts?_page=7
@@ -324,10 +320,10 @@ Using JS instead of a JSON file, you can create data programmatically.
 ```javascript
 // index.js
 module.exports = () => {
-  const data = { users: [] }
+  const data = {users: []}
   // Create 1000 users
   for (let i = 0; i < 1000; i++) {
-    data.users.push({ id: i, name: `user${i}` })
+    data.users.push({id: i, name: `user${i}`})
   }
   return data
 }
@@ -337,7 +333,7 @@ module.exports = () => {
 $ json-server index.js
 ```
 
-__Tip__ use modules like [Faker](https://github.com/faker-js/faker), [Casual](https://github.com/boo1ean/casual), [Chance](https://github.com/victorquinn/chancejs) or [JSON Schema Faker](https://github.com/json-schema-faker/json-schema-faker).
+**Tip** use modules like [Faker](https://github.com/faker-js/faker), [Casual](https://github.com/boo1ean/casual), [Chance](https://github.com/victorquinn/chancejs) or [JSON Schema Faker](https://github.com/json-schema-faker/json-schema-faker).
 
 ### HTTPS
 
@@ -432,7 +428,7 @@ You can also set options in a `json-server.json` configuration file.
 
 ### Module
 
-If you need to add authentication, validation, or __any behavior__, you can use the project as a module in combination with other Express middlewares.
+If you need to add authentication, validation, or **any behavior**, you can use the project as a module in combination with other Express middlewares.
 
 #### Simple example
 
@@ -458,7 +454,7 @@ server.listen(3000, () => {
 $ node server.js
 ```
 
-The path you provide to the `jsonServer.router` function  is relative to the directory from where you launch your node process. If you run the above code from another directory, it’s better to use an absolute path:
+The path you provide to the `jsonServer.router` function is relative to the directory from where you launch your node process. If you run the above code from another directory, it’s better to use an absolute path:
 
 ```js
 const path = require('path')
@@ -517,17 +513,19 @@ const middlewares = jsonServer.defaults()
 
 server.use(middlewares)
 server.use((req, res, next) => {
- if (isAuthorized(req)) { // add your authorization logic here
-   next() // continue to JSON Server router
- } else {
-   res.sendStatus(401)
- }
+  if (isAuthorized(req)) {
+    // add your authorization logic here
+    next() // continue to JSON Server router
+  } else {
+    res.sendStatus(401)
+  }
 })
 server.use(router)
 server.listen(3000, () => {
   console.log('JSON Server is running')
 })
 ```
+
 #### Custom output example
 
 To modify responses, overwrite `router.render` method:
@@ -536,19 +534,18 @@ To modify responses, overwrite `router.render` method:
 // In this example, returned resources will be wrapped in a body property
 router.render = (req, res) => {
   res.jsonp({
-    body: res.locals.data
+    body: res.locals.data,
   })
 }
 ```
 
 You can set your own status code for the response:
 
-
 ```javascript
 // In this example we simulate a server side error response
 router.render = (req, res) => {
   res.status(500).jsonp({
-    error: "error message here"
+    error: 'error message here',
   })
 }
 ```
@@ -559,10 +556,12 @@ To add rewrite rules, use `jsonServer.rewriter()`:
 
 ```javascript
 // Add this before server.use(router)
-server.use(jsonServer.rewriter({
-  '/api/*': '/$1',
-  '/blog/:resource/:id/show': '/:resource/:id'
-}))
+server.use(
+  jsonServer.rewriter({
+    '/api/*': '/$1',
+    '/blog/:resource/:id/show': '/:resource/:id',
+  }),
+)
 ```
 
 #### Mounting JSON Server on another endpoint example
@@ -575,26 +574,26 @@ server.use('/api', router)
 
 #### API
 
-__`jsonServer.create()`__
+**`jsonServer.create()`**
 
 Returns an Express server.
 
-__`jsonServer.defaults([options])`__
+**`jsonServer.defaults([options])`**
 
 Returns middlewares used by JSON Server.
 
-* options
-  * `static` path to static files
-  * `logger` enable logger middleware (default: true)
-  * `bodyParser` enable body-parser middleware (default: true)
-  * `noCors` disable CORS (default: false)
-  * `readOnly` accept only GET requests (default: false)
+- options
+  - `static` path to static files
+  - `logger` enable logger middleware (default: true)
+  - `bodyParser` enable body-parser middleware (default: true)
+  - `noCors` disable CORS (default: false)
+  - `readOnly` accept only GET requests (default: false)
 
-__`jsonServer.router([path|object], [options])`__
+**`jsonServer.router([path|object], [options])`**
 
 Returns JSON Server router.
 
-* options (see [CLI usage](#cli-usage))
+- options (see [CLI usage](#cli-usage))
 
 ### Deployment
 
@@ -604,23 +603,23 @@ You can deploy JSON Server. For example, [JSONPlaceholder](http://jsonplaceholde
 
 ### Video
 
-* [Creating Demo APIs with json-server on egghead.io](https://egghead.io/lessons/nodejs-creating-demo-apis-with-json-server)
+- [Creating Demo APIs with json-server on egghead.io](https://egghead.io/lessons/nodejs-creating-demo-apis-with-json-server)
 
 ### Articles
 
-* [Node Module Of The Week - json-server](http://nmotw.in/json-server/)
-* [ng-admin: Add an AngularJS admin GUI to any RESTful API](http://marmelab.com/blog/2014/09/15/easy-backend-for-your-restful-api.html)
-* [Fast prototyping using Restangular and Json-server](https://glebbahmutov.com/blog/fast-prototyping-restangular-and-json-server/)
-* [No API? No Problem! Rapid Development via Mock APIs](https://medium.com/@housecor/rapid-development-via-mock-apis-e559087be066#.93d7w8oro)
-* [Zero Code REST With json-server](https://dzone.com/articles/zero-code-rest-with-json-server)
+- [Node Module Of The Week - json-server](http://nmotw.in/json-server/)
+- [ng-admin: Add an AngularJS admin GUI to any RESTful API](http://marmelab.com/blog/2014/09/15/easy-backend-for-your-restful-api.html)
+- [Fast prototyping using Restangular and Json-server](https://glebbahmutov.com/blog/fast-prototyping-restangular-and-json-server/)
+- [No API? No Problem! Rapid Development via Mock APIs](https://medium.com/@housecor/rapid-development-via-mock-apis-e559087be066#.93d7w8oro)
+- [Zero Code REST With json-server](https://dzone.com/articles/zero-code-rest-with-json-server)
 
 ### Third-party tools
 
-* [Grunt JSON Server](https://github.com/tfiwm/grunt-json-server)
-* [Docker JSON Server](https://github.com/clue/docker-json-server)
-* [JSON Server GUI](https://github.com/naholyr/json-server-gui)
-* [JSON file generator](https://github.com/dfsq/json-server-init)
-* [JSON Server extension](https://github.com/maty21/json-server-extension)
+- [Grunt JSON Server](https://github.com/tfiwm/grunt-json-server)
+- [Docker JSON Server](https://github.com/clue/docker-json-server)
+- [JSON Server GUI](https://github.com/naholyr/json-server-gui)
+- [JSON file generator](https://github.com/dfsq/json-server-init)
+- [JSON Server extension](https://github.com/maty21/json-server-extension)
 
 ## License
 
