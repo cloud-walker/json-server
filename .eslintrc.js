@@ -1,3 +1,13 @@
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
-  env: {jest: true},
+  parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 'latest',
+  },
+  overrides: [
+    {
+      files: ['__tests__/**'],
+      env: {jest: true},
+    },
+  ],
 }
