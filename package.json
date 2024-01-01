@@ -45,6 +45,8 @@
     "@babel/core": "^7.12.3",
     "@babel/node": "^7.12.6",
     "@babel/preset-env": "^7.12.1",
+    "@types/mkdirp": "^2.0.0",
+    "@types/rimraf": "^4.0.5",
     "cross-env": "^7.0.2",
     "eslint": "^7.13.0",
     "eslint-config-standard": "^16.0.1",
@@ -63,7 +65,8 @@
     "server-ready": "^0.3.1",
     "standard": "^17.1.0",
     "supertest": "^6.0.1",
-    "temp-write": "^4.0.0"
+    "temp-write": "^4.0.0",
+    "vitest": "^1.1.1"
   },
   "repository": {
     "type": "git",
